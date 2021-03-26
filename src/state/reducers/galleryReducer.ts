@@ -7,7 +7,16 @@ interface GalleryState {
   data: object[];
 }
 
-const galleryReducer = (state: GalleryState, action: Action): GalleryState => {
+const initialState = {
+  loading: false,
+  error: null,
+  data: [],
+};
+
+const galleryReducer = (
+  state: GalleryState = initialState,
+  action: Action
+): GalleryState => {
   switch (action.type) {
     case ActionTypes.SEARCH_IMAGES_REQUEST:
       return {

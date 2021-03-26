@@ -12,14 +12,16 @@ export const searchImagesCreator = (text: string, page: number) => {
     try {
       const CLIENT_ID = "5ekMw6SLOyeT2Yc1v2SGRn7FFpcvhygf-BZQV8zafMY";
       const { data } = await axios.get(
-        `https://api.unsplash.com/search/photos?client_id=${CLIENT_ID}&page=${page}&query=${text}`
+        `https://api.unsplash.com/search/photos?client_id=${CLIENT_ID}&page=2&per_page=30&query=${text}`
       );
 
-      const results = data.map((item: any) => item);
+      const { results } = data;
+
+      const payload = results.map((item: any) => item);
 
       dispatch({
         type: ActionTypes.SEARCH_IMAGES_SUCCESS,
-        payload: results,
+        payload,
       });
     } catch (err) {
       dispatch({
