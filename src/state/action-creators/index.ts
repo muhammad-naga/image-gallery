@@ -3,7 +3,7 @@ import { Dispatch } from "redux";
 import { ActionTypes } from "../types";
 import { Action } from "./../actions";
 
-const searchImagesCreator = (text: string, page: number) => {
+export const searchImagesCreator = (text: string, page: number) => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionTypes.SEARCH_IMAGES_REQUEST,
@@ -29,5 +29,3 @@ const searchImagesCreator = (text: string, page: number) => {
     }
   };
 };
-
-export default searchImagesCreator;
