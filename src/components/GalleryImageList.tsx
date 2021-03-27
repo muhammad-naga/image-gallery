@@ -4,7 +4,6 @@ import { useAction } from "../hooks/useAction";
 import GalleryListItem from "./GalleryListItem";
 import LoadingSpinner from "./LoadingSpinner";
 import { Pagination } from "@material-ui/lab";
-// import Pagination from "./Pagination";
 
 const GalleryImageList = () => {
   const [text, setText] = useState("");
@@ -14,7 +13,7 @@ const GalleryImageList = () => {
   const [perPage, setPerPage] = useState(30);
   const { searchImagesCreator } = useAction();
   const { loading, error, data } = useSelector((state: any) => state.images);
-  const { results, total_pages, total } = data;
+  const { results, total_pages } = data;
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -57,8 +56,6 @@ const GalleryImageList = () => {
               <GalleryListItem key={item.id} {...item} />
             ))}
         </div>
-
-        {/* <Pagination perPage={perPage} total={total} /> */}
       </div>
       {results && (
         <Pagination
@@ -67,7 +64,7 @@ const GalleryImageList = () => {
           color="primary"
           count={total_pages}
           page={page}
-          onChange={(e, page) => {
+          onChange={(e: any, page: any) => {
             window.scrollTo({
               top: 0,
               left: 0,
