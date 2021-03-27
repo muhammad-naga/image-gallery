@@ -5,25 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 5000px;
+  padding-bottom: 40px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   max-width: 1400px;
+  margin-bottom: 40px;
 }
 
 /*  Image Gallery wrapper */
 
 .header {
   background-color: #2831b8;
-  padding: 30px 0;
+  padding: 80px 0;
   margin-bottom: 60px;
 }
 
@@ -32,6 +38,10 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.gallery-items {
+  margin-bottom: 40px;
 }
 
 .header .content form input {
@@ -57,7 +67,7 @@ code {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 10px;
   gap: 10px;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 350px;
 }
 .gallery-images-wrapper .item {
   overflow: hidden;
@@ -73,6 +83,23 @@ code {
   height: 100%;
   transition: transform 0.5s ease-in-out;
   cursor: pointer;
+}
+
+.pageintion-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pageintion-list li {
+  list-style: none;
+  background-color: tomato;
+  padding: 5px;
+  margin: 3px;
+}
+
+.we-founded {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 /*  Loading Spinner */
